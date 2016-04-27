@@ -1,5 +1,5 @@
 import {expect} from 'chai';
-import {List} from 'immutable';
+import {List, Map} from 'immutable';
 
 describe('immutability', () => {
 
@@ -21,7 +21,7 @@ describe('immutability', () => {
 
   describe('a list', () => {
     function addMovie(currentState, movie) {
-    return currentState.push(movie);
+      return currentState.push(movie);
     }
 
   it('is immutable', () => {
@@ -42,3 +42,8 @@ describe('immutability', () => {
   });
 
 });
+
+// code refactor that breaks tests
+// function addMovie(currentState, movie) {
+//   return currentState.update('movies', movies => movies.push(movie));
+// }
